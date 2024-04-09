@@ -1,0 +1,32 @@
+version: 3'.3'
+services:
+  db:
+    image: mysql:latest
+    ports:
+      - '5506:3306'
+    restart: unless-stopped
+    environment:
+      MYSQL_PASSWORD: 12345678
+      MYSQL_ROOT_PASSWORD: 12345678
+    volumes:
+       - ./data/db.sql:/docker-entrypoint-initdb.d/db.sql
+    
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '8080:80'
+    environment:
+      - PMA_HOST=db
+    depends_on:
+      - db
+ 
+  monitoramento:
+    image: php:apache
+    build:
+        context: .
+        dockerfile: ./Dockerfile
+    ports:
+      - "444:80"
+    volumes:
+      - ./:/var/www/html

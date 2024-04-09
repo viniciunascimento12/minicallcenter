@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/monitoramento.css">
+<title>Monitoramento de Ramais</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <h2 class="navbar-brand mb-0 mx-auto">Monitoramento de Ramais</h2>
+    <button class="btn btn" type="button" onclick="window.location.href='/lib/listagemRamais.php';">Listar Ramais</button>
+  </div>
+</nav>
+
+<div class="container-fluid d-flex flex-column justify-content-center align-items-center" style="height: calc(100vh - 56px);"> <!-- Subtrai a altura da barra de navegação -->
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <div class="card bg-light">
+                <div class="card-content">
+                    <div id="cartoes"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="p-3 bg-light card">
+                <div class="card-content">
+                    <div id="cardMensagem"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="p-3 bg-light card">
+                <div class="card-content">
+                    <div id="cardTotais"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-3.2.1.slim.min.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/monitoramento.js"></script>
+</body>
+</html>
